@@ -22,7 +22,8 @@ RUN curl -sLo manatee.tgz $manatee_url && \
   cd manatee && \
   ./configure --with-pcre && \
   make && \
-  make install
+  make install && \
+  cd && rm -rf manatee
 
 ARG corp_name
 COPY $corp_name.vrt /corpora/src/test
